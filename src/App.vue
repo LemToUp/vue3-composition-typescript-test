@@ -1,8 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
 
@@ -13,6 +9,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  margin: 20px;
 }
 
 #nav {
@@ -27,4 +31,17 @@
     }
   }
 }
+
+.button {
+  background-color: #1867c0;
+  height: 36px;
+  min-width: 64px;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 </style>

@@ -1,0 +1,7 @@
+export const SET_ELEMENTS = 'setElements'
+export const SET_IS_ELEMENTS_LOADING = 'setIsElementsLoading'
+export const SET_IS_ELEMENTS_LOADED = 'setIsElementsLoaded'
+export const GET_ELEMENTS = 'getElements'
+export const ADD_ELEMENT = 'addElement'
+export const REMOVE_ELEMENT = 'removeElement'
+export const ADD_HISTORY_ACTION = 'addHistoryAction'
