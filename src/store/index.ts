@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 import Element from '@/interfaces/Element'
 import Action from '@/interfaces/Action'
 import getElementsRequest from '@/api/elements'
+import sortHelper from '@/helpers/sort'
 import {
   ADD_ELEMENT,
   ADD_HISTORY_ACTION,
@@ -21,18 +22,10 @@ export default createStore({
   },
   getters: {
     elementsOrdered: state => {
-      return state.elements.sort((firstEl: Element, secondEl: Element): number => {
-        if (firstEl.id > secondEl.id) return 1
-        if (firstEl.id < secondEl.id) return -1
-        return 0
-      })
+      return state.elements.sort(sortHelper('id', 'asc'))
     },
     selectedElementsOrdered: state => {
-      return state.selectedElements.sort((firstEl: Element, secondEl: Element): number => {
-        if (firstEl.id > secondEl.id) return 1
-        if (firstEl.id < secondEl.id) return -1
-        return 0
-      })
+      return state.selectedElements.sort(sortHelper('id', 'asc'))
     }
   },
   mutations: {
