@@ -1,8 +1,9 @@
-import Element from "@/interfaces/Element";
+import Element from '@/interfaces/Element'
+import { Types } from '@/enums/History'
 
 export default interface Action {
-  readonly id: number,
-  readonly type: string,
-  element: Element,
-  readonly date: string,
+  readonly id: number;
+  readonly type: Types;
+  element: Element;
+  readonly date: string;
 };

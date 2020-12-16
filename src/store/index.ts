@@ -11,6 +11,7 @@ import {
   SET_ELEMENTS, SET_IS_ELEMENTS_LOADED,
   SET_IS_ELEMENTS_LOADING
 } from '@/store/actions'
+import { Types } from '@/enums/History'
 
 export default createStore({
   state: {
@@ -52,7 +53,7 @@ export default createStore({
         state.elements.push(element)
       }
     },
-    [ADD_HISTORY_ACTION] (state, payload: {type: string; elementId: number}): void {
+    [ADD_HISTORY_ACTION] (state, payload: {type: Types; elementId: number}): void {
       const { type, elementId } = payload
       const element = [...state.elements, ...state.selectedElements].find(element => element.id === elementId)
 
@@ -78,11 +79,11 @@ export default createStore({
     },
     [ADD_ELEMENT] (context, elementId: number): void {
       context.commit(ADD_ELEMENT, elementId)
-      context.commit(ADD_HISTORY_ACTION, { type: 'add', elementId: elementId })
+      context.commit(ADD_HISTORY_ACTION, { type: Types.Add, elementId: elementId })
     },
     [REMOVE_ELEMENT] (context, elementId: number): void {
       context.commit(REMOVE_ELEMENT, elementId)
-      context.commit(ADD_HISTORY_ACTION, { type: 'remove', elementId: elementId })
+      context.commit(ADD_HISTORY_ACTION, { type: Types.Remove, elementId: elementId })
     }
   }
 })

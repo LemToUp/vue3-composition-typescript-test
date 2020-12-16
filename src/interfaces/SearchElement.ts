@@ -1,5 +1,5 @@
-import Element from "@/interfaces/Element";
+import Element from '@/interfaces/Element'
 
 export default interface SearchElement extends Element {
-  searchWeight: number
+  searchWeight: number;
 };

@@ -16,6 +16,7 @@ import { computed, defineComponent, ComputedRef } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute, RouteLocationNormalizedLoaded } from 'vue-router'
 import Action from '@/interfaces/Action'
+import { Types } from '@/enums/History'
 
 export default defineComponent({
   name: 'History',
@@ -24,7 +25,7 @@ export default defineComponent({
     const { params: { type } }: RouteLocationNormalizedLoaded = useRoute()
     const history: ComputedRef<Array<Action>> = computed(() => store.state.history)
     const historyFiltered: ComputedRef<Array<Action>> = computed(() => {
-      return history.value.filter(action => type === 'all' || action.type === type)
+      return history.value.filter(action => type === Types.All || action.type === type)
     })
 
     return { historyFiltered }

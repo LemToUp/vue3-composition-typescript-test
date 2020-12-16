@@ -20,7 +20,7 @@ export default defineComponent({
     },
     buttonText: {
       type: String,
-      default: 'Add'
+      default: '+'
     },
     direction: {
       type: String,
